@@ -28,6 +28,8 @@ urlpatterns = [
 
     # path('cat/', views.categories),  # http://127.0.0.1:8000/cat/
 
+
+
 ]
 
 handler404=page_not_found

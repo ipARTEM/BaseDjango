@@ -7,8 +7,8 @@ register_converter(converters.FourDigitYearConverter,'year4')
 
 urlpatterns = [
 
-    # path('',views.index),       # http://127.0.0.1:8000
     path('',views.index, name='home'),       # http://127.0.0.1:8000
+    path('about',views.about, name='about'),
 
     path('cats/<int:cat_id>/', views.categories, name='cats_id'),  # http://127.0.0.1:8000/cat/2/
 
