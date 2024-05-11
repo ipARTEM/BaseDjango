@@ -8,6 +8,21 @@
 <h1>{{ menu|first }}</h1>
 <h1>{{ menu|last }}</h1>
 <h1>{{ menu|join:' | ' }}</h1>
+
+<ul>
+    {% for p in  posts%}
+    {% if p.is_published %}
+    <il>
+        <h2>{{p.title}}</h2>
+        <p>{{p.content}}</p>
+        {% if not forloop.last %}
+        <hr>
+        {% endif %}
+    </il>
+    {% endif %}
+    {% endfor %}
+</ul>
+
 <h1>{{ float|add:'50' }}</h1>
 <h1>{{ float|divisibleby:'2' }}</h1>
 <h1>{{ lst }}</h1>

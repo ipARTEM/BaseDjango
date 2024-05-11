@@ -11,13 +11,22 @@ class MyClass:
         self.a=a
         self.b=b
 
+
+data_db=[
+    {'id':1,'title':'Анджелина Джоли', 'content': 'Биография Анджелины Джоли', 'is_published': True},
+    {'id': 2, 'title': 'Науми Кембол', 'content': 'Биография Науми Кембол', 'is_published': False},
+    {'id': 3, 'title': 'Натали Потрмен', 'content': 'Биография Натали Портмен', 'is_published': True},
+
+]
+
 def index (request):
     # t=render_to_string('women/index.html')
     # return HttpResponse(t)
     data={
-        'title': 'главная страница?',
+        'title': 'Главная страница',
         'main_title': '',
         'menu':menu,
+        'posts': data_db,
         'float': 28.56,
         'lst':[1,2,'abc', True],
         'set':{1,2,3,2,5},
