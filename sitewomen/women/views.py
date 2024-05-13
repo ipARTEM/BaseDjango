@@ -4,7 +4,14 @@ from django.template.defaultfilters import slugify
 from django.urls import reverse
 from django.template.loader import render_to_string
 
-menu=['О сайте', 'Добавить статью','Обратная связь','Войти']
+# menu=['О сайте', 'Добавить статью','Обратная связь','Войти']
+
+menu=[
+    {'title':'О сайте' ,'url_name': 'about'},
+    {'title': 'Добавить статью', 'url_name': 'add_page'},
+    {'title': 'Обратная связь', 'url_name': 'contact'},
+    {'title': 'Войти', 'url_name': 'login'},
+]
 
 class MyClass:
     def __init__(self, a,b):
@@ -38,6 +45,18 @@ def index (request):
 
 def about(request):
     return render(request, 'women/about.html',{'title':'О сайте'})
+
+def show_post(request,post_id):
+    return  HttpResponse(f' Отображение статьи с id {post_id}')
+
+def addpage(request):
+    return  HttpResponse(f'Добавление статьи')
+
+def contact(request):
+    return  HttpResponse(f'Обратная связь')
+
+def login(request):
+    return  HttpResponse(f'Авторизация')
 
 def categories(request,cat_id):
     return HttpResponse(f'<h1>Статьи по категориям</h1><p>id: {cat_id}</p>')
