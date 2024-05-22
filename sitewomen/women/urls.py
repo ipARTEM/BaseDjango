@@ -10,6 +10,8 @@ urlpatterns = [
     path('',views.index, name='home'),       # http://127.0.0.1:8000
     path('about',views.about, name='about'),
 
+    path('about2', views.about2, name='about2'),
+
     path('addpage/', views.addpage,name='add_page'),
     path('contact/', views.contact, name='contact'),
     path('login/', views.login, name='login'),
