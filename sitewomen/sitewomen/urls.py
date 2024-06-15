@@ -19,10 +19,19 @@ from django.urls import path, include
 from women import views
 from women.views import page_not_found
 
+from django.conf import settings
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('women.urls')),
+    # path("__debug__/", include("debug_toolbar.urls")),
 ]
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns += [
+        path('__debug__/', include(debug_toolbar.urls)),
+    ]
 
 
 handler404 = page_not_found
